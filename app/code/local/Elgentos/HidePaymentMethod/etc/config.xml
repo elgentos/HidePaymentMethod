@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Elgentos_HidePaymentMethod>
+            <version>1.0.0</version>
+        </Elgentos_HidePaymentMethod>
+    </modules>
+    <global>
+        <models>
+            <elgentos_hidepaymentmethod>
+                <class>Elgentos_HidePaymentMethod_Model</class>
+            </elgentos_hidepaymentmethod>
+        </models>
+    </global>
+    <frontend>
+        <events>
+            <payment_method_is_active>
+                <observers>
+                    <disable_banktransfer_payment_frontend>
+                        <type>model</type>
+                        <class>Elgentos_HidePaymentMethod_Model_Observer</class>
+                        <method>hidePaymentMethod</method>
+                    </disable_banktransfer_payment_frontend>
+                </observers>
+            </payment_method_is_active>
+        </events>
+    </frontend>
+</config>
